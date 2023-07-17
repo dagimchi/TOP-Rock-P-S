@@ -30,6 +30,12 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  let userScore = 0;
+  let computerScore = 0;
+  for (let i = 1; i <= 5; i++) {
+    let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+  }
+}
+
+game();
