@@ -57,5 +57,3 @@ function game() {
                 You - ${userScore} vs Computer - ${computerScore}`);
   }
 }
-
-game();
