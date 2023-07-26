@@ -17,6 +17,7 @@ let gameBtns = document.querySelectorAll(".container button");
 let resetBtn = document.querySelector(".btn-reset");
 
 btnContainer.addEventListener("click", playRound);
+
 resetBtn.addEventListener("click", () => {
   userScore = 0;
   computerScore = 0;
@@ -25,6 +26,7 @@ resetBtn.addEventListener("click", () => {
   gameBtns.forEach((item) => (item.disabled = false));
   playerNumScore.textContent = userScore;
   computerNumScore.textContent = computerScore;
+  message.textContent = "";
 });
 
 function getComputerChoice() {
