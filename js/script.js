@@ -42,7 +42,7 @@ function playRound(e) {
   let computerSelection = getComputerChoice();
 
   if (playerSelection === "rock" && computerSelection === "Rock") {
-    playerImage.src = "../images/rock.png";
+    playerImage.src = "/images/rock.png";
     playerOutput.appendChild(playerImage);
     computerImage.src = "../images/rock.png";
     computerOutput.appendChild(computerImage);
