@@ -42,66 +42,66 @@ function playRound(e) {
   let computerSelection = getComputerChoice();
 
   if (playerSelection === "rock" && computerSelection === "Rock") {
-    playerImage.src = "js/rock.png";
+    playerImage.src = "images/rock.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "js/rock.png";
+    computerImage.src = "images/rock.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "It's a tie! Rock against rock.";
   } else if (playerSelection === "rock" && computerSelection === "Paper") {
     computerScore++;
-    playerImage.src = "../images/rock.png";
+    playerImage.src = "images/rock.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/paper.png";
+    computerImage.src = "images/paper.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You lose! Paper beats rock.";
   } else if (playerSelection === "rock" && computerSelection === "Scissors") {
     userScore++;
-    playerImage.src = "../images/rock.png";
+    playerImage.src = "images/rock.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/scissors.png";
+    computerImage.src = "images/scissors.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You Win! Rock beats scissors.";
   } else if (playerSelection === "paper" && computerSelection === "Rock") {
     userScore++;
-    playerImage.src = "../images/paper.png";
+    playerImage.src = "images/paper.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/rock.png";
+    computerImage.src = "images/rock.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You Win! Paper beats rock.";
   } else if (playerSelection === "paper" && computerSelection === "Paper") {
-    playerImage.src = "../images/paper.png";
+    playerImage.src = "images/paper.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/paper.png";
+    computerImage.src = "images/paper.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "It's a tie! Paper against paper.";
   } else if (playerSelection === "paper" && computerSelection === "Scissors") {
     computerScore++;
-    playerImage.src = "../images/paper.png";
+    playerImage.src = "images/paper.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/scissors.png";
+    computerImage.src = "images/scissors.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You lose! Scissors beats paper.";
   } else if (playerSelection === "scissors" && computerSelection === "Rock") {
     computerScore++;
-    playerImage.src = "../images/scissors.png";
+    playerImage.src = "images/scissors.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/rock.png";
+    computerImage.src = "images/rock.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You lose! Rock beats scissors.";
   } else if (playerSelection === "scissors" && computerSelection === "Paper") {
     userScore++;
-    playerImage.src = "../images/scissors.png";
+    playerImage.src = "images/scissors.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/paper.png";
+    computerImage.src = "images/paper.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "You Win! Scissors beats paper.";
   } else if (
     playerSelection === "scissors" &&
     computerSelection === "Scissors"
   ) {
-    playerImage.src = "../images/scissors.png";
+    playerImage.src = "images/scissors.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/scissors.png";
+    computerImage.src = "images/scissors.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "It's a tie! Scissor against scissor.";
   }
