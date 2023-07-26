@@ -42,9 +42,9 @@ function playRound(e) {
   let computerSelection = getComputerChoice();
 
   if (playerSelection === "rock" && computerSelection === "Rock") {
-    playerImage.src = "/images/rock.png";
+    playerImage.src = "js/rock.png";
     playerOutput.appendChild(playerImage);
-    computerImage.src = "../images/rock.png";
+    computerImage.src = "js/rock.png";
     computerOutput.appendChild(computerImage);
     message.textContent = "It's a tie! Rock against rock.";
   } else if (playerSelection === "rock" && computerSelection === "Paper") {
