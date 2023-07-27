@@ -1,21 +1,20 @@
 let userScore = 0;
 let computerScore = 0;
-
+// VARIABLES FOR USERINPUT
 let btnContainer = document.querySelector(".container");
-
+let gameBtns = document.querySelectorAll(".container button");
+let resetBtn = document.querySelector(".btn-reset");
+// ROCK PAPER SCISSORS IMAGE VARIABLES
 let playerImage = document.createElement("img");
 let playerOutput = document.querySelector(".player-output");
-
 let computerImage = document.createElement("img");
 let computerOutput = document.querySelector(".computer-output");
-
+// OUTPUT SCORE VARIABLES
 let message = document.querySelector(".message");
 let playerNumScore = document.querySelector(".player-score");
 let computerNumScore = document.querySelector(".computer-score");
 
-let gameBtns = document.querySelectorAll(".container button");
-let resetBtn = document.querySelector(".btn-reset");
-
+// CLICK EVENT HANDLER FOR BUTTONS ARE APPLIED TO THE CONTAINER
 btnContainer.addEventListener("click", playRound);
 
 resetBtn.addEventListener("click", () => {
@@ -37,76 +36,58 @@ function getComputerChoice() {
   else return "Scissors";
 }
 
+function getImage(userChoice, computerChoice) {
+  playerImage.src = `images/${userChoice}.png`;
+  playerOutput.appendChild(playerImage);
+  computerImage.src = `images/${computerChoice}.png`;
+  computerOutput.appendChild(computerImage);
+}
+
 function playRound(e) {
   let playerSelection = e.target.textContent.toLowerCase();
   let computerSelection = getComputerChoice();
 
   if (playerSelection === "rock" && computerSelection === "Rock") {
-    playerImage.src = "images/rock.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/rock.png";
-    computerOutput.appendChild(computerImage);
+    getImage("rock", "rock");
     message.textContent = "It's a tie! Rock against rock.";
   } else if (playerSelection === "rock" && computerSelection === "Paper") {
     computerScore++;
-    playerImage.src = "images/rock.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/paper.png";
-    computerOutput.appendChild(computerImage);
+    getImage("rock", "paper");
     message.textContent = "You lose! Paper beats rock.";
   } else if (playerSelection === "rock" && computerSelection === "Scissors") {
     userScore++;
-    playerImage.src = "images/rock.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/scissors.png";
-    computerOutput.appendChild(computerImage);
+    getImage("rock", "scissors");
     message.textContent = "You Win! Rock beats scissors.";
   } else if (playerSelection === "paper" && computerSelection === "Rock") {
     userScore++;
-    playerImage.src = "images/paper.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/rock.png";
-    computerOutput.appendChild(computerImage);
+    getImage("paper", "rock");
     message.textContent = "You Win! Paper beats rock.";
   } else if (playerSelection === "paper" && computerSelection === "Paper") {
-    playerImage.src = "images/paper.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/paper.png";
-    computerOutput.appendChild(computerImage);
+    getImage("paper", "paper");
     message.textContent = "It's a tie! Paper against paper.";
   } else if (playerSelection === "paper" && computerSelection === "Scissors") {
     computerScore++;
-    playerImage.src = "images/paper.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/scissors.png";
-    computerOutput.appendChild(computerImage);
+    getImage("paper", "scissors");
     message.textContent = "You lose! Scissors beats paper.";
   } else if (playerSelection === "scissors" && computerSelection === "Rock") {
     computerScore++;
-    playerImage.src = "images/scissors.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/rock.png";
-    computerOutput.appendChild(computerImage);
+    getImage("scissors", "rock");
     message.textContent = "You lose! Rock beats scissors.";
   } else if (playerSelection === "scissors" && computerSelection === "Paper") {
     userScore++;
-    playerImage.src = "images/scissors.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/paper.png";
-    computerOutput.appendChild(computerImage);
+    getImage("scissors", "paper");
     message.textContent = "You Win! Scissors beats paper.";
   } else if (
     playerSelection === "scissors" &&
     computerSelection === "Scissors"
   ) {
-    playerImage.src = "images/scissors.png";
-    playerOutput.appendChild(playerImage);
-    computerImage.src = "images/scissors.png";
-    computerOutput.appendChild(computerImage);
+    getImage("scissors", "scissors");
     message.textContent = "It's a tie! Scissor against scissor.";
   }
+  // DISPLAY USER AND COMPUTER SCORE UPON CLICKING A BTN
   playerNumScore.textContent = userScore;
   computerNumScore.textContent = computerScore;
+  // DISPLAY WHO REACHED 5 POINTS AND DISABLE BTNS
   if (userScore === 5) {
     message.textContent = "You won! Grats.";
     gameBtns.forEach((item) => (item.disabled = true));
@@ -115,21 +96,3 @@ function playRound(e) {
     gameBtns.forEach((item) => (item.disabled = true));
   }
 }
-
-// function game() {
-//   // LOOP 5 TIMES THE GAME FUNCTION
-//   for (let i = 1; i <= 5; i++) {
-//     // RETURN USER STRING VIA PROMPT IN ALL LOWER CASE AND STORE IN A VAR
-//     let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
-//     // RETURN RANDOM STRING OF 3 DETERMINED POSSIBILITIES VIA GETCOMPUTERCHOICE FUNC AND STORE IN A VAR
-//     let computerSelection = getComputerChoice();
-//     // OUTPUT RESULTS TO THE CONSOLE
-//     console.log(`Game ${i} of 5:
-
-//                 You chose - ${playerSelection}
-//                 Your opponent chose - ${computerSelection}
-
-//                 ${playRound(playerSelection, computerSelection)}
-//                 You - ${userScore} vs Computer - ${computerScore}`);
-//   }
-// }
