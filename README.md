@@ -1,4 +1,4 @@
-![A screenshot of a webpage featuring a rock paper scissors game](ss.png)
+![A screenshot of a webpage featuring a rock paper scissors game](images/ss.png)
 
 # TOP-Rock-P-S
 
