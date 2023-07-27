@@ -1,14 +1,17 @@
+![A screenshot of a webpage featuring a rock paper scissors game](ss.png)
+
 # TOP-Rock-P-S
 
 A JS Project as part of the odin project
 
 ## Project Description
 
-A webpage featuring a simple console based game of Rock, paper, scissors.
+A webpage featuring a simple game of Rock, paper, scissors with UI.
 
 ## Technology
 
 - HTML
+- CSS
 - JS
 
 ## Skills Demonstrated
@@ -23,10 +26,21 @@ A webpage featuring a simple console based game of Rock, paper, scissors.
 - String methods use.
 - Back ticks for strings and variable/expression evaluation.
 - Callback functions use.
+- Use of absolute and relative positioning.
+- Flexbox one dimensional layouts.
+- Subtle animation using transitions.
+- Node selections and storing them in a variable using querySelectors.
+- DOM manipulation by accessing properties of objects and creating elements via JS.
+  - I created an img element, updated its src, and appended the node itself to a div.
+- Creation and use of event handlers and passing in either a function expression or declarative function.
+  - Knowing that the event handler function is the one that invokes said function is important.
+- Use of forEach method applied to a nodelist.
+- Use of functions to avoid repetition.
+  - See the getImage function which gets invoked in every if condition in the playRound function.
+- Use of event target which takes advantage of event delegation.
+  - The click event is only applied to the container of btns and not the btns themselves as this is not necessary due to how bubbling works.
 
-## Future Implementations
+## Possible Future Implementations
 
-- GUI
-- A WAY TO RESET OR PLAY AGAIN
 - TAKE USER INPUT FOR HOW MANY ROUNDS THE USER WANTS TO PLAY
-- A WAY TO CHECK FOR INVALID USER SELECTION AND PROMPT THE USER TO ENTER IN A VALUE WITHOUT COUNTING AS A ROUND
+- Responsiveness
